@@ -1,17 +1,22 @@
 #include <iostream>
 using namespace std;
 
+long factorial(int n);
+
 int main() {
-    int n = 6;
-    int d = 2;
-    while (n != 1) {
-        if (n % d == 0) {
-            n /= d;
-            continue;
-        }
-        else {
-            d++;
-            continue;
-        }
+    int n;
+    cout << "Enter an integer: ";
+    cin >> n;
+    cout << "Factorial of " << n << " is " << factorial(n);
+    return 0;
+
+}
+
+long factorial (int n) {
+    if (n <= 1) {
+        return n;
+    }
+    else {
+        return n * factorial(n - 1);
     }
 }
