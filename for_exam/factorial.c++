@@ -8,15 +8,16 @@ int main() {
     cout << "Enter an integer: ";
     cin >> n;
     cout << "Factorial of " << n << " is " << factorial(n);
+
     return 0;
 
 }
 
 long factorial (int n) {
-    if (n <= 1) {
-        return n;
+    if (n > 1) {
+        return n * factorial(n - 1);
     }
     else {
-        return n * factorial(n - 1);
+        return 1;
     }
 }
