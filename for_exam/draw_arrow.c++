@@ -4,7 +4,6 @@ using namespace std;
 
 int main() {
     int rows = 5;
-    int total = (rows * 2) - 1;
     int blank = rows - 1;
     int stars = 1;
     for (int i = 0; i < rows; i++) {
