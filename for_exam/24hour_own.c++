@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 enum meridiem {am, pm};
@@ -12,7 +13,8 @@ struct Time {
 
 int main() {
     Time t;
-    string ap;
+    string choice;
+
     cout << "Hour: ";
     cin >> t.hour;
 
@@ -23,17 +25,9 @@ int main() {
     cin >> t.second;
 
     cout << "Meridiem(am/pm): ";
-    cin >> ap;
+    cin >> choice;
 
-    if (ap == "am") {
-        t.duration = am;
-    }
-    else if (ap == "pm") {
-        t.duration = pm;
-    }
-
-    string minute = to_string(t.minute);
-    string second = to_string(t.second);
+    t.duration = (choice == "am")? am: pm;
 
     if (t.duration == pm && t.hour != 12) {
         t.hour += 12;
@@ -43,19 +37,8 @@ int main() {
         t.hour = 0;
     }
 
-    string hour = to_string(t.hour);
-
-    if (t.hour < 10) {
-        hour = string("0") + hour;
-    }
-    if (t.minute < 10) {
-        minute = string("0") + minute;
-    }
-    if (t.second < 10) {
-        second = string("0") + second;
-    }
-
-    cout << hour << ":" << minute << ":" << second;
-
+    cout << setw(2) << setfill('0') << t.hour << ":"
+    << setw(2) << setfill('0') << t.minute << ":"
+    << setw(2) << setfill('0') << t.second << endl;
     return 0;
 }
