@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
     char repeat;
-    while (true) {
+    do {
         int arr[10];
         for (int i = 0; i < 10; i++) {
             cin >> arr[i];
@@ -20,10 +20,7 @@ int main() {
     
         cout << "\nDo you wnat to sort another data set?(y/n): ";
         cin >> repeat;
-        if (repeat == 'n') {
-            break;
-        }
-    }
+    } while (repeat == 'y' || repeat == 'Y');
 
     return 0;
 }
