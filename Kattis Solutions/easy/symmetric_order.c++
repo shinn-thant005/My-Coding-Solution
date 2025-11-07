@@ -15,7 +15,7 @@ int main() {
         for (int i = 0; i < n; i++) {
             string st;
             cin >> st;
-            if ((i + 1) % 2 != 0) {
+            if (i % 2 == 0) {
                 name[up] = st;
                 up++;
             }
